@@ -141,6 +141,7 @@ class HitCarder(object):
         try:
             res = self.sess.post(self._save_url, data=info)
             res_json = json.loads(res.text)
+            logger.info("%s Response: %s" % (self, res_json))
             if str(res_json['e']) == '0':
                 logger.info("%s Successfully hit card." % self)
                 self.status = "COMPLETE"
