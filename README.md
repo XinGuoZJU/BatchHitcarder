@@ -25,6 +25,10 @@
 
 项目用于学习交流，仅用于各项无异常时打卡，如有身体不适等情况还请自行如实打卡~
 
+## Known issues
+
+- version 1.0.1: 由于表单发生更新，缺少提交必要参数，导致提交时出现 "请获取定位信息或者选取填写所在位置" 错误，请升级至 1.0.2+ 版本或 clone 最新代码以正常使用。
+
 ## Installation
 
 使用 pip 安装即可
@@ -49,7 +53,7 @@ Commands:
   run         Run ZJU Hitcard tasks with the given configs.
 
 $ hitcarder --version
-1.0.1
+1.0.2
 ```
 
 ## Usage

@@ -12,3 +12,4 @@ dist
 *.sh
 *.pyc
 DEPLOYMENT.md
+playground.*
