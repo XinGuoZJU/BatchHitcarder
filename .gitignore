@@ -10,4 +10,5 @@ dist
 *config.json
 *.service
 *.sh
+*.pyc
 DEPLOYMENT.md
