@@ -83,7 +83,11 @@ def run(config):
             logger.warning("Not a valid task. A valid task must include keys: 'username', 'password' and 'schedule'.")
             continue
         hour, minute, rand_delay = schedule.get('hour'), schedule.get('minute'), schedule.get('rand_delay', 1200)
-        if not hour or not minute:
+        if not isinstance(hour, int) or not isinstance(minute, int):
+            logger.warning("Not a valid task schedule. Both 'hour' and 'minute' must be integers, "
+                           "got hour:%s type, minute: %s type." % (type(hour), type(minute)))
+            continue
+        if hour is None or minute is None:
             logger.warning("Not a valid task schedule. A valid task schedule must include keys: 'hour' and 'minute'.")
             continue
 
