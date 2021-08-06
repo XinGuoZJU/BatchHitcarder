@@ -28,7 +28,7 @@
 ## Known issues
 
 - version 1.0.1: (issue #1) 由于表单发生更新，缺少提交必要参数，导致提交时出现 "请获取定位信息或者选取填写所在位置" 错误，1.0.3+ 版本已修复此问题。
-- version 1.0.3: (issue #3) 配置文件中 hour 选项设置 0 的话，显示错误 `Not a valid task schedule. A valid task schedule must include keys: 'hour' and 'minute'.`
+- version 1.0.3: (issue #3) 配置文件中 hour 或 minute 选项设置 0 的话，显示错误 `Not a valid task schedule. A valid task schedule must include keys: 'hour' and 'minute'.`
 
 > 本仓库最新代码已修复上述 issue，但尚未重新发版。
 
