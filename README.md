@@ -27,11 +27,26 @@
 
 ## Known issues
 
-- version 1.0.1: 由于表单发生更新，缺少提交必要参数，导致提交时出现 "请获取定位信息或者选取填写所在位置" 错误，请升级至 1.0.3+ 版本或 clone 最新代码以正常使用。
+- version 1.0.1: (issue #1) 由于表单发生更新，缺少提交必要参数，导致提交时出现 "请获取定位信息或者选取填写所在位置" 错误，1.0.3+ 版本已修复此问题。
+- version 1.0.3: (issue #3) 配置文件中 hour 选项设置 0 的话，显示错误 `Not a valid task schedule. A valid task schedule must include keys: 'hour' and 'minute'.`
+
+> 本仓库最新代码已修复上述 issue，但尚未重新发版。
 
 ## Installation
 
-使用 pip 安装即可
+> 由于项目初期存在较多 bug，比较重要的 Issue 会及时修正并提交到本仓库。而 PYPI (pip安装方式）上的发布版本（由于发版及时性问题）可能包含 Known issues 中的问题。因此，为了保证本程序生效的即时性，推荐使用 **方式一** 安装。
+
+方式一：clone 本仓库，cd 至本项目目录，执行下面命令进行安装
+
+```bash
+$ git pull && python3 setup.py bdist_wheel
+$ pip install dist/zju_hitcarder-x.x.x-py3-none-any.whl --force-reinstall
+```
+
+- 第一行命令会拉取仓库最新代码，并将项目打包生成 `.whl` 文件（轮子）在项目的 `dist` 文件夹下。
+- 第二行命令通过 `pip` 安装指定 `.whl` 文件，版本号 `x.x.x` 替换为具体打包生成的具体的版本号，`--force-reinstall` 为强制重新安装本包及其所有依赖。
+
+方式二：使用 pip 安装
 
 ```bash
 $ pip install -U zju_hitcarder
