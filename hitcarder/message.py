@@ -75,6 +75,7 @@ class MailMessageSender(BaseMessageSender):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.host_server = kwargs.get("host_server")
+        self.smtp_ssl_port = kwargs.get("smtp_ssl_port", SMTP_SSL.default_port)
         self.password = kwargs.get("password")
         self.sender = kwargs.get("sender")
         self.receiver = kwargs.get("receiver")
@@ -83,7 +84,7 @@ class MailMessageSender(BaseMessageSender):
 
     def _init_smtp(self):
         username = self.sender.split("@")[0] if 'qq' in self.sender else self.sender
-        smtp = SMTP_SSL(self.host_server)
+        smtp = SMTP_SSL(host=self.host_server, port=self.smtp_ssl_port)
         smtp.set_debuglevel(1)
         smtp.ehlo(self.host_server)
         smtp.login(username, self.password)

@@ -113,6 +113,8 @@ $ hitcarder --version
                "type": "mail",
                "init_args": {
                    "host_server": "<你的 SMTP server>",
+                   # SMTP SSL port 为可选参数，保持默认参数可填 null, 空串（""）或 0.
+                   "smtp_ssl_port": "<SMTP SSL port (可选参数)>",
                    "password": "<你的 SMTP 服务密码>",
                    "sender": "<发件人邮箱>",
                    "receiver": "<收件人邮箱>"
